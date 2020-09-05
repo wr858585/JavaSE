@@ -9,17 +9,27 @@ public class BankTest {
 
         Bank bank = new Bank(10);
 
-        bank.addCustomer("Tom","Scarvo");
-        bank.addCustomer("Lynnet","Scarvo");
+        Object obj = bank;
 
-        System.out.println(bank.getNumberOfCustomers());
+        bank.addCustomer("Tom","Scarvo");
+        Customer cust0 = bank.getCustomer(0);
+//        bank.addCustomer("Lynnet","Scarvo");
+
+//        System.out.println(bank.getNumberOfCustomers());
 
         Account acctChecking0 = new CheckingAccount(1000,2000);
+        Account acctCSavings0 = new SavingsAccount(1000,0.1);
 
-        bank.getCustomer(0).setAccount(new CheckingAccount(1000,2000));
-        bank.getCustomer(0).setAccount(new SavingsAccount(2000,0.01));
-        bank.getCustomer(1).setAccount(new CheckingAccount(1000,10000));
-        bank.getCustomer(1).setAccount(new SavingsAccount(5000,0.01));
+        cust0.setAccount(acctChecking0,1);
+        cust0.setAccount(acctCSavings0,0);
+
+
+
+
+//        bank.getCustomer(0).setAccount(acctChecking0);
+//        bank.getCustomer(0).setAccount(acctCSavings0);
+//        bank.getCustomer(1).setAccount(new CheckingAccount(1000,10000));
+//        bank.getCustomer(1).setAccount(new SavingsAccount(5000,0.01));
 
         acctChecking0.deposit(5000);
         acctChecking0.withdraw(6500);

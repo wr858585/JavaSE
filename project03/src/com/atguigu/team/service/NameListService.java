@@ -13,7 +13,7 @@ public class NameListService {
 
     //employees用来保存所有公司员工对象
     private Employee[] employees = new Employee[Data.EMPLOYEES.length];
-    Equipment[] equipments = new Equipment[12];
+    Equipment[] equipments = new Equipment[Data.EQUIPMENTS.length - 1];
 
     public NameListService(){
 
@@ -56,11 +56,15 @@ public class NameListService {
         return employees;
     }
 
-//    public Employee getEmployee(int id){
-//        for (int i = 0; i < employees.length; i++) {
-//            if(employees[i].)
-//        }
-//    }
+    public Employee getEmployee(int id){
+        for (int i = 0; i < employees.length; i++) {
+            if(employees[i].getId() == id){
+                return employees[i];
+            }
+        }
+        throw new TeamException("未找到指定员工");
+    }
+
     public static void main(String[] args) {
 
         NameListService test = new NameListService();
@@ -72,7 +76,4 @@ public class NameListService {
         }
 
     }
-
-
-
 }

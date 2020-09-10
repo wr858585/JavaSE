@@ -30,6 +30,11 @@ public class Architect extends Designer{
 
     @Override
     public String toString() {
-        return super.getDetails() + "\t设计师\t" + getStatus() + "\t" + super.getBonus() + "\t" + stock + getEquipment().getDescription();
+        return super.getDetails() + "\t架构师\t" + getStatus() + "\t" + super.getBonus() + "\t" + stock + "\t" + getEquipment().getDescription();
+    }
+
+    @Override
+    public String getPosition(){
+        return "架构师";
     }
 }

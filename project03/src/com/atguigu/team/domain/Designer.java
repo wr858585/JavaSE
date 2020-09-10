@@ -30,6 +30,11 @@ public class Designer extends Programmer{
 
     @Override
     public String toString() {
-        return super.getDetails() + "\t设计师\t" + getStatus() + "\t" + bonus + "\t" + getEquipment().getDescription();
+        return super.getDetails() + "\t设计师\t" + getStatus() + "\t" + bonus + "\t\t\t" + getEquipment().getDescription();
+    }
+
+    @Override
+    public String getPosition(){
+        return "设计师";
     }
 }

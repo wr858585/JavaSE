@@ -12,7 +12,7 @@ public class Programmer extends Employee{
     private int memberId;
 
     //status：自定义枚举类，表示成员的状态
-    private Status status;
+    private Status status = Status.FREE;
 
     //equipment：该成员领用的设备
     private Equipment equipment;
@@ -57,6 +57,11 @@ public class Programmer extends Employee{
 
     @Override
     public String toString() {
-        return getDetails() + "\t程序员\t" + getStatus() + "\t" + equipment.getDescription();
+        return getDetails() + "\t程序员\t" + getStatus() + "\t\t\t\t\t" + equipment.getDescription();
     }
+
+    public String getPosition(){
+        return "程序员";
+    }
+
 }

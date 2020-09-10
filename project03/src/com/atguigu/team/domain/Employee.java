@@ -54,7 +54,7 @@ public class Employee {
     }
 
     public String getDetails(){
-        return id + "\t" + name + "\t" + age + "\t" + salary;
+        return id + "\t" + name + "\t" + age + "\t\t" + salary;
     }
 
     @Override

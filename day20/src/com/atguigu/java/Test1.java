@@ -6,12 +6,45 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 /**
  * @author oono
  * @date 2020 09 16
  */
 public class Test1 extends Super implements Inter{
+
+    @Test
+    public void test100(){
+
+        String str = "aabbccdd";
+        String target = "bb";
+        String replace = "dd";
+
+        StringBuilder sb = new StringBuilder(str);
+        StringBuilder sb1 = new StringBuilder(str);
+
+        while(sb.indexOf(target) != -1){
+            int index = sb.indexOf(target);
+            StringBuilder delete = sb.delete(index, index + target.length());
+            StringBuilder append = delete.append(replace);
+            sb1 = append;
+        }
+
+        String s = sb1.toString();
+        System.out.println(s);
+
+
+    }
+
+    @Test
+    public void test24(){
+        Map<String, List<String>> map = new HashMap<>();
+        List<String> list1 = new ArrayList<>();
+        list1.addAll(Arrays.asList("大野","杉山"));
+        System.out.println(list1);
+    }
+
 
     @Test
     public void test6(){
